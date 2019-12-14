@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Fast Food Chains</title>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.0.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <h1>Fast Food Chains</h1>
+
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "hconcat": [{"mark": "point", "encoding": {"color": {"condition": {"type": "ordinal", "field": "chain", "selection": "selector019"}, "value": "grey"}, "size": {"type": "quantitative", "field": "vpl"}, "tooltip": [{"type": "quantitative", "field": "rank"}, {"type": "nominal", "field": "chain"}, {"type": "quantitative", "field": "sales"}, {"type": "quantitative", "field": "loc"}, {"type": "quantitative", "field": "vpl"}], "x": {"type": "quantitative", "field": "loc"}, "y": {"type": "quantitative", "field": "sales"}}, "selection": {"selector019": {"type": "interval"}}}, {"hconcat": [{"mark": "text", "encoding": {"text": {"type": "nominal", "field": "chain"}, "y": {"type": "ordinal", "axis": null, "field": "row_number"}}, "title": "Chain", "transform": [{"window": [{"op": "row_number", "field": "", "as": "row_number"}]}, {"filter": {"selection": "selector019"}}, {"window": [{"op": "rank", "field": "row_number", "as": "rank"}]}, {"filter": "(datum.rank < 20)"}]}, {"mark": "text", "encoding": {"text": {"type": "nominal", "field": "sales"}, "y": {"type": "ordinal", "axis": null, "field": "row_number"}}, "title": "Sales", "transform": [{"window": [{"op": "row_number", "field": "", "as": "row_number"}]}, {"filter": {"selection": "selector019"}}, {"window": [{"op": "rank", "field": "row_number", "as": "rank"}]}, {"filter": "(datum.rank < 20)"}]}, {"mark": "text", "encoding": {"text": {"type": "nominal", "field": "loc"}, "y": {"type": "ordinal", "axis": null, "field": "row_number"}}, "title": "Number of Locations", "transform": [{"window": [{"op": "row_number", "field": "", "as": "row_number"}]}, {"filter": {"selection": "selector019"}}, {"window": [{"op": "rank", "field": "row_number", "as": "rank"}]}, {"filter": "(datum.rank < 20)"}]}]}], "data": {"name": "data-20173a44b37c5a2d7f6bc13d106c0c73"}, "resolve": {"legend": {"color": "independent"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.0.0.json", "datasets": {"data-20173a44b37c5a2d7f6bc13d106c0c73": [{"rank": 8, "chain": "Chick-fil-A", "sales": 9000000000, "loc": 2225, "vpl": 4044944.0}, {"rank": 22, "chain": "Whataburger", "sales": 2300000000, "loc": 821, "vpl": 2801462.0}, {"rank": 1, "chain": "McDonald's", "sales": 37500000000, "loc": 14036, "vpl": 2671701.0}, {"rank": 25, "chain": "Zaxby's", "sales": 2100000000, "loc": 890, "vpl": 2359551.0}, {"rank": 11, "chain": "Panera Bread", "sales": 4500000000, "loc": 2043, "vpl": 2202643.0}, {"rank": 28, "chain": "Culver's", "sales": 1400000000, "loc": 643, "vpl": 2177294.0}, {"rank": 12, "chain": "Chipotle", "sales": 4500000000, "loc": 2371, "vpl": 1897933.0}, {"rank": 29, "chain": "Bojangles'", "sales": 1300000000, "loc": 764, "vpl": 1701571.0}, {"rank": 6, "chain": "Wendy's", "sales": 9300000000, "loc": 5769, "vpl": 1612064.0}, {"rank": 18, "chain": "Jack in the Box", "sales": 3500000000, "loc": 2251, "vpl": 1554865.0}, {"rank": 5, "chain": "Taco Bell", "sales": 9300000000, "loc": 6446, "vpl": 1442755.0}, {"rank": 19, "chain": "Popeye's", "sales": 3200000000, "loc": 2231, "vpl": 1434334.0}, {"rank": 4, "chain": "Burger King", "sales": 9800000000, "loc": 7226, "vpl": 1356214.0}, {"rank": 26, "chain": "Carl's Jr.", "sales": 1500000000, "loc": 1156, "vpl": 1297578.0}, {"rank": 14, "chain": "Sonic Drive-In", "sales": 4400000000, "loc": 3593, "vpl": 1224603.0}, {"rank": 23, "chain": "Hardee's", "sales": 2200000000, "loc": 1864, "vpl": 1180258.0}, {"rank": 21, "chain": "Panda Express", "sales": 2300000000, "loc": 2011, "vpl": 1143710.0}, {"rank": 13, "chain": "KFC", "sales": 4400000000, "loc": 4019, "vpl": 1094800.0}, {"rank": 30, "chain": "Wingstop", "sales": 1100000000, "loc": 1027, "vpl": 1071081.0}, {"rank": 27, "chain": "Five Guys", "sales": 1400000000, "loc": 1321, "vpl": 1059803.0}, {"rank": 9, "chain": "Domino's", "sales": 5900000000, "loc": 5587, "vpl": 1056023.0}, {"rank": 16, "chain": "Arby's", "sales": 3600000000, "loc": 3415, "vpl": 1054173.0}, {"rank": 2, "chain": "Starbucks", "sales": 13200000000, "loc": 13930, "vpl": 947595.0}, {"rank": 20, "chain": "Papa John's", "sales": 3100000000, "loc": 3314, "vpl": 935425.0}, {"rank": 15, "chain": "Dairy Queen", "sales": 3600000000, "loc": 4455, "vpl": 808081.0}, {"rank": 17, "chain": "Little Caesars", "sales": 3500000000, "loc": 4332, "vpl": 807941.0}, {"rank": 24, "chain": "Jimmy John's", "sales": 2100000000, "loc": 2755, "vpl": 762250.0}, {"rank": 10, "chain": "Pizza Hut", "sales": 5500000000, "loc": 7522, "vpl": 731189.0}, {"rank": 7, "chain": "Dunkin' Donuts", "sales": 5900000000, "loc": 12538, "vpl": 470569.0}, {"rank": 3, "chain": "Subway", "sales": 10800000000, "loc": 25908, "vpl": 416860.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+
+
+</html>
